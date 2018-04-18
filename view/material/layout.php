@@ -42,8 +42,10 @@
 		.mdui-list-item{
 			margin: 2px 0px;
 		}
-
-		@media screen and (max-width:600px){
+		.mdui-toolbar>a:last-child{
+			opacity:1;
+		}
+		@media screen and (max-width:980px){
 			.mdui-list-item .mdui-text-right{
 				display: none;
 			}
@@ -51,13 +53,19 @@
 				width:100% !important;
 				margin:0px;
 			}
+			.mdui-toolbar>*{
+				display: none;
+			}
+			.mdui-toolbar>a:last-child,.mdui-toolbar>.mdui-typo-headline,.mdui-toolbar>i:first-child{
+				display: block;
+			}
 		}
 	</style>
 </head>
 <body class="mdui-theme-primary-blue-grey mdui-theme-accent-blue">
 	<header class="mdui-appbar mdui-color-theme">
 		<div class="mdui-toolbar mdui-container">
-			<a href="/" class="mdui-typo-headline">oneindex</a>
+			<a href="/" class="mdui-typo-headline">one</a>
 			<?php foreach((array)$navs as $n=>$l):?>
 			<i class="mdui-icon material-icons mdui-icon-dark" style="margin:0;">chevron_right</i>
 			<a href="<?php e($l);?>"><?php e($n);?></a>
